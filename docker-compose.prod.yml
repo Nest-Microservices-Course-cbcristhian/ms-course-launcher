@@ -11,6 +11,8 @@ services:
       context: ./client-gateway
       dockerfile: Dockerfile.prod
     image: client-gateway-prod
+    ports:
+      - ${PORT}:${PORT}
     environment:
       - PORT=3000
       - NATS_SERVERS=nats://nats-server:4222
